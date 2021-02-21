@@ -130,16 +130,16 @@ public class State{
 	public boolean write(Lesson le,boolean nullptr ){
 		GoNext();
 		if(nullptr){
-			namelessons[x][y][z]=null;
-			nameteachers[x][y][z]=null;
+			this.namelessons[x][y][z]=null;
+			this.nameteachers[x][y][z]=null;
 			return true;
 		}
 		if(le==null||le.getNameCourse()==null)return false;
-		namelessons[x][y][z]=Utilities.passbyValue(le);
-		nameteachers[x][y][z]=Utilities.passbyValue(findTeacher());
-		namelessons[x][y][z].reduce();
-		nameteachers[x][y][z].reduce(x);
-		if(IsAtTheSameTime()||!namelessons[x][y][z].getClassABC().equals(n())||namelessons[x][y][z].getAmoh()==0||nameteachers[x][y][z].getD(x)==0||nameteachers[x][y][z].getW()==0) {
+		this.namelessons[x][y][z]=Utilities.passbyValue(le);
+		this.nameteachers[x][y][z]=Utilities.passbyValue(findTeacher());
+		this.namelessons[x][y][z].reduce();
+		this.nameteachers[x][y][z].reduce(x);
+		if(this.IsAtTheSameTime()||!this.namelessons[x][y][z].getClassABC().equals(n())||this.namelessons[x][y][z].getAmoh()==0||this.nameteachers[x][y][z].getD(x)==0||this.nameteachers[x][y][z].getW()==0) {
 			return false;
 		}
 
