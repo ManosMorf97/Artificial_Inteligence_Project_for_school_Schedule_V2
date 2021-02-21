@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55f88b33-510c-4cb8-b982-3c30b471c644" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lessons.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teachers.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schedule.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AssigmentA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lesson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/State.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StateNode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilities.java" beforeDir="false" />
-    </list>
+    <list default="true" id="55f88b33-510c-4cb8-b982-3c30b471c644" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="134" column="24" lean-forward="true" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+            <state relative-caret-position="1292">
+              <caret line="165" column="29" lean-forward="true" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -68,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="735" />
@@ -100,7 +87,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1613947742920" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1613948664853" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -160,7 +147,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3297587" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -192,8 +179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="134" column="24" lean-forward="true" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+        <state relative-caret-position="1292">
+          <caret line="165" column="29" lean-forward="true" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
         </state>
       </provider>
     </entry>
