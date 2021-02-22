@@ -135,8 +135,8 @@ public class State{
 			return true;
 		}
 		if(le==null||le.getNameCourse()==null)return false;
-		this.namelessons[x][y][z]=Utilities.passbyValue(le);
-		this.nameteachers[x][y][z]=Utilities.passbyValue(findTeacher());
+		this.namelessons[x][y][z]=le;
+		this.nameteachers[x][y][z]=findTeacher();
 		this.namelessons[x][y][z].reduce();
 		this.nameteachers[x][y][z].reduce(x);
 		if(this.IsAtTheSameTime()||!this.namelessons[x][y][z].getClassABC().equals(n())||this.namelessons[x][y][z].getAmoh()==0||this.nameteachers[x][y][z].getD(x)==0||this.nameteachers[x][y][z].getW()==0) {
@@ -153,7 +153,7 @@ public class State{
 
 	public StateNode getBestChild(int n,State state,int value){
 		if(n==depth||state.isTerminal()){
-			return new StateNode(Utilities.passbyValue(state),value+state.getpriority());
+			return new StateNode(state,value+state.getpriority());
 		}else{
 			State states[]=new State[state.getLessons().size()];
 			ArrayList<StateNode> SN=new ArrayList<>();
@@ -161,13 +161,13 @@ public class State{
 			int maxindex=0;
 			for(int i=0; i<states.length; i++){
 				states[i]=Utilities.passbyValue(state);
-				boolean written=states[i].write(Utilities.passbyValue(state.getLessons().get(i)),false);
+				boolean written=states[i].write(states[i].getLessons().get(i),false);
 				values[i]=value;
 				if(written) {
 					if (n != 0){
 						values[i] = value + states[i].getpriority();
 					}
-					SN.add(getBestChild(n + 1, Utilities.passbyValue(states[i]), values[i]));
+					SN.add(getBestChild(n + 1, states[i], values[i]));
 				}
                 if(!SN.isEmpty())
 					if(SN.get(SN.size()-1).getValue()>=SN.get(maxindex).getValue()) {
