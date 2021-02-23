@@ -2,7 +2,7 @@
 
 At this project I am trying to make a schedule for students in which I try to take consider of:
 <ol>
-the needs of teachers,
-the evenly spread of program,
-the evenly spread of the teachers
+<li>the needs of teachers<li>
+<li>the evenly spread of program<li>
+<li>the evenly spread of the teachers<li>
 </ol>
