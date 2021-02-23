@@ -1,5 +1,4 @@
-//Vatmanidis Nikolaos 3150009
-//Morfiadakis Emmanouil 3150112
+
 import java.util.ArrayList;
 
 public class Teacher{

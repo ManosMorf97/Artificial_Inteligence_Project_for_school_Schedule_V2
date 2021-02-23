@@ -1,5 +1,3 @@
-//Vatmanidis Nikolaos 3150009
-//Morfiadakis Emmanouil 3150112
 public class Lesson{
 		private String code,nameCourse,class_s;
 		private int ammountofhours;

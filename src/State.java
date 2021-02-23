@@ -1,6 +1,5 @@
 
-//Vatmanidis Nikolaos 3150009
-//Morfiadakis Emmanouil 3150112
+
 		import java.util.ArrayList;
 public class State{
 	private ArrayList<Lesson> lessons;
@@ -8,11 +7,9 @@ public class State{
 	private Lesson[][][] namelessons=new Lesson[5][7][9];//5 days 7 hours 9 classes
 	private Teacher[][][] nameteachers=new Teacher[5][7][9];
 	private int x=-1,y=0,z=0;
-	private int depth;
-	public State(ArrayList<Lesson> lessonA,ArrayList<Teacher> teachersA,int depth){
+	public State(ArrayList<Lesson> lessonA,ArrayList<Teacher> teachersA){
 		teachers=teachersA;
 		lessons=lessonA;
-		this.depth=depth;
 	}
 	public Lesson [][][] Program(){
 		return namelessons;
@@ -39,9 +36,6 @@ public class State{
 		if(IsEvenlySpreadTeachers())pr++;
 		if(namelessons[x][y][z].Active())pr++;
 		return pr;
-	}
-	public int getDepth(){
-		return depth;
 	}
 	public ArrayList<Lesson> getLessons(){
 		return lessons;
@@ -137,50 +131,14 @@ public class State{
 		if(le==null||le.getNameCourse()==null)return false;
 		this.namelessons[x][y][z]=le;
 		this.nameteachers[x][y][z]=findTeacher();
-		this.namelessons[x][y][z].reduce();
-		this.nameteachers[x][y][z].reduce(x);
 		if(this.IsAtTheSameTime()||!this.namelessons[x][y][z].getClassABC().equals(n())||this.namelessons[x][y][z].getAmoh()==0||this.nameteachers[x][y][z].getD(x)==0||this.nameteachers[x][y][z].getW()==0) {
 			return false;
 		}
-
-			//
-
+		this.namelessons[x][y][z].reduce();
+		this.nameteachers[x][y][z].reduce(x);
 		return true;
 	}
 
-
-
-
-	public StateNode getBestChild(int n,State state,int value){
-		if(n==depth||state.isTerminal()){
-			return new StateNode(state,value+state.getpriority());
-		}else{
-			State states[]=new State[state.getLessons().size()];
-			ArrayList<StateNode> SN=new ArrayList<>();
-			int values[]=new int[states.length];
-			int maxindex=0;
-			for(int i=0; i<states.length; i++){
-				states[i]=Utilities.passbyValue(state);
-				boolean written=states[i].write(states[i].getLessons().get(i),false);
-				values[i]=value;
-				if(written) {
-					if (n != 0){
-						values[i] = value + states[i].getpriority();
-					}
-					SN.add(getBestChild(n + 1, states[i], values[i]));
-				}
-                if(!SN.isEmpty())
-					if(SN.get(SN.size()-1).getValue()>=SN.get(maxindex).getValue()) {
-						maxindex = SN.size()-1;
-					}
-			}
-			if(SN.isEmpty()) {
-				state.write(null,true);
-				return new StateNode(state,value);
-			}
-			return SN.get(maxindex);
-		}
-	}
 	public void GoNext(){
 		if(x==-1){
 			x=0;

@@ -1,5 +1,3 @@
-//Vatmanidis Nikolaos 3150009
-//Morfiadakis Emmanouil 3150112
 import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -86,9 +84,9 @@ public class AssigmentA{
 		}catch(IOException e){
 			System.out.println("Error during opening files");
 		}
-		State state=new State(lessons,teachers,depth);
+		State state=new State(lessons,teachers);
 		while(!state.isTerminal()){
-			state=state.getBestChild(0,state,0).getState();
+			state=Utilities.getBestChild(0,state,0,depth).getState();
 		}
 		Lesson [][][] program=state.Program();
 		String day[]=new String[5];

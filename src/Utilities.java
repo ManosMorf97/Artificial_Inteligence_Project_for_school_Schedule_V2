@@ -34,7 +34,7 @@ public class Utilities {
             lessons.add(passbyValue(lesson));
         for(Teacher teacher:state.getTeachers())
             teachers.add(passbyValue(teacher));
-        State new_state=new State(lessons,teachers,state.getDepth());
+        State new_state=new State(lessons,teachers);
         new_state.setX(state.getX());
         new_state.setY(state.getY());
         new_state.setZ(state.getZ());
@@ -47,5 +47,35 @@ public class Utilities {
             }
         }
         return new_state;
+    }
+    public static StateNode getBestChild(int n,State state,int value,int depth){
+        if(n==depth||state.isTerminal()){
+            return new StateNode(state,value+state.getpriority());
+        }else{
+            State states[]=new State[state.getLessons().size()];
+            ArrayList<StateNode> SN=new ArrayList<>();
+            int values[]=new int[states.length];
+            int maxindex=0;
+            for(int i=0; i<states.length; i++){
+                states[i]=Utilities.passbyValue(state);
+                boolean written=states[i].write(states[i].getLessons().get(i),false);
+                values[i]=value;
+                if(written) {
+                    if (n != 0){
+                        values[i] = value + states[i].getpriority();
+                    }
+                    SN.add(getBestChild(n + 1, states[i], values[i],depth));
+                }
+                if(!SN.isEmpty())
+                    if(SN.get(SN.size()-1).getValue()>=SN.get(maxindex).getValue()) {
+                        maxindex = SN.size()-1;
+                    }
+            }
+            if(SN.isEmpty()) {
+                state.write(null,true);
+                return new StateNode(state,value);
+            }
+            return SN.get(maxindex);
+        }
     }
 }
