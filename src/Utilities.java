@@ -51,7 +51,7 @@ public class Utilities {
     }
     public static StateNode getBestChild(int n,State state,int value,int depth){
         if(n==depth||state.isTerminal()){
-            return new StateNode(state,value+state.getpriority());
+            return new StateNode(state,value);
         }else{
             State states[]=new State[state.getLessons().size()];
             ArrayList<StateNode> SN=new ArrayList<>();
@@ -62,9 +62,7 @@ public class Utilities {
                 boolean written=states[i].write(states[i].getLessons().get(i),false);
                 values[i]=value;
                 if(written) {
-                    if (n != 0){
-                        values[i] = value + states[i].getpriority();
-                    }
+                    values[i] = value + states[i].getpriority();
                     SN.add(getBestChild(n + 1, states[i], values[i],depth));
                 }
                 if(!SN.isEmpty())
